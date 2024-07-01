@@ -1,0 +1,325 @@
+extends pageSections/base
+block content
+  #wrapper
+    #main
+      .inner
+         header
+          h1 Elements
+          // Text
+          section
+            h2 Text
+            p
+              | This is 
+              b bold
+              |  and this is 
+              strong strong
+              | . This is 
+              i italic
+              |  and this is 
+              em emphasized
+              | .
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is 
+              sup superscript
+              |  text and this is 
+              sub subscript
+              |  text.
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is 
+              u underlined
+              |  and this is code: 
+              code for (;;) { ... }
+              | . Finally, 
+              a(href='#') this is a link
+              | .
+            hr
+            p
+              | Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+            hr
+            h2 Heading Level 2
+            h3 Heading Level 3
+            h4 Heading Level 4
+            hr
+            h3 Blockquote
+            blockquote
+              | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
+            h3 Preformatted
+            pre.
+              
+          // Lists
+          section
+            h2 Lists
+            .row
+              .col-6.col-12-medium
+                h3 Unordered
+                ul
+                  li Dolor pulvinar etiam.
+                  li Sagittis adipiscing.
+                  li Felis enim feugiat.
+                h3 Alternate
+                ul.alt
+                  li Dolor pulvinar etiam.
+                  li Sagittis adipiscing.
+                  li Felis enim feugiat.
+              .col-6.col-12-medium
+                h3 Ordered
+                ol
+                  li Dolor pulvinar etiam.
+                  li Etiam vel felis viverra.
+                  li Felis enim feugiat.
+                  li Dolor pulvinar etiam.
+                  li Etiam vel felis lorem.
+                  li Felis enim et feugiat.
+                h3 Icons
+                ul.icons
+                  li
+                    a.icon.brands.style1.fa-twitter(href='#')
+                      span.label Twitter
+                  li
+                    a.icon.brands.style1.fa-facebook-f(href='#')
+                      span.label Facebook
+                  li
+                    a.icon.brands.style1.fa-instagram(href='#')
+                      span.label Instagram
+                  li
+                    a.icon.brands.style1.fa-github(href='#')
+                      span.label Github
+                ul.icons
+                  li
+                    a.icon.brands.style2.fa-twitter(href='#')
+                      span.label Twitter
+                  li
+                    a.icon.brands.style2.fa-facebook-f(href='#')
+                      span.label Facebook
+                  li
+                    a.icon.brands.style2.fa-instagram(href='#')
+                      span.label Instagram
+                  li
+                    a.icon.brands.style2.fa-github(href='#')
+                      span.label Github
+            h2 Actions
+            .row
+              .col-6.col-12-medium
+                ul.actions
+                  li
+                    a.button.primary(href='#') Default
+                  li
+                    a.button(href='#') Default
+                ul.actions.small
+                  li
+                    a.button.primary.small(href='#') Small
+                  li
+                    a.button.small(href='#') Small
+                ul.actions.stacked
+                  li
+                    a.button.primary(href='#') Default
+                  li
+                    a.button(href='#') Default
+                ul.actions.stacked
+                  li
+                    a.button.primary.small(href='#') Small
+                  li
+                    a.button.small(href='#') Small
+              .col-6.col-12-medium
+                ul.actions.stacked
+                  li
+                    a.button.primary.fit(href='#') Default
+                  li
+                    a.button.fit(href='#') Default
+                ul.actions.stacked
+                  li
+                    a.button.primary.small.fit(href='#') Small
+                  li
+                    a.button.small.fit(href='#') Small
+          // Table
+          section
+            h2 Table
+            h3 Default
+            .table-wrapper
+              table
+                thead
+                  tr
+                    th Name
+                    th Description
+                    th Price
+                tbody
+                  tr
+                    td Item One
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                  tr
+                    td Item Two
+                    td Vis ac commodo adipiscing arcu aliquet.
+                    td 19.99
+                  tr
+                    td Item Three
+                    td  Morbi faucibus arcu accumsan lorem.
+                    td 29.99
+                  tr
+                    td Item Four
+                    td Vitae integer tempus condimentum.
+                    td 19.99
+                  tr
+                    td Item Five
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                tfoot
+                  tr
+                    td(colspan='2')
+                    td 100.00
+            h3 Alternate
+            .table-wrapper
+              table.alt
+                thead
+                  tr
+                    th Name
+                    th Description
+                    th Price
+                tbody
+                  tr
+                    td Item One
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                  tr
+                    td Item Two
+                    td Vis ac commodo adipiscing arcu aliquet.
+                    td 19.99
+                  tr
+                    td Item Three
+                    td  Morbi faucibus arcu accumsan lorem.
+                    td 29.99
+                  tr
+                    td Item Four
+                    td Vitae integer tempus condimentum.
+                    td 19.99
+                  tr
+                    td Item Five
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                tfoot
+                  tr
+                    td(colspan='2')
+                    td 100.00
+          // Buttons
+          section
+            h3 Buttons
+            ul.actions
+              li
+                a.button.primary(href='#') Primary
+              li
+                a.button(href='#') Default
+            ul.actions
+              li
+                a.button.large(href='#') Large
+              li
+                a.button(href='#') Default
+              li
+                a.button.small(href='#') Small
+            ul.actions.fit
+              li
+                a.button.primary.fit(href='#') Fit
+              li
+                a.button.fit(href='#') Fit
+              li
+                a.button.fit(href='#') Fit
+            ul.actions.fit.small
+              li
+                a.button.primary.fit.small(href='#') Fit + Small
+              li
+                a.button.fit.small(href='#') Fit + Small
+              li
+                a.button.fit.small(href='#') Fit + Small
+            ul.actions
+              li
+                a.button.primary.icon.solid.fa-download(href='#') Icon
+              li
+                a.button.icon.solid.fa-upload(href='#') Icon
+              li
+                a.button.icon.solid.fa-save(href='#') Icon
+            ul.actions
+              li
+                span.button.primary.disabled Disabled
+              li
+                span.button.disabled Disabled
+          // Form
+          section
+            h2 Form
+            form(method='post' action='#')
+              .row.gtr-uniform
+                .col-6.col-12-xsmall
+                  input#demo-name(type='text' name='demo-name' value='' placeholder='Name')
+                .col-6.col-12-xsmall
+                  input#demo-email(type='email' name='demo-email' value='' placeholder='Email')
+                .col-12
+                  select#demo-category(name='demo-category')
+                    option(value='') - Category -
+                    option(value='1') Manufacturing
+                    option(value='1') Shipping
+                    option(value='1') Administration
+                    option(value='1') Human Resources
+                .col-4.col-12-small
+                  input#demo-priority-low(type='radio' name='demo-priority' checked='')
+                  label(for='demo-priority-low') Low
+                .col-4.col-12-small
+                  input#demo-priority-normal(type='radio' name='demo-priority')
+                  label(for='demo-priority-normal') Normal
+                .col-4.col-12-small
+                  input#demo-priority-high(type='radio' name='demo-priority')
+                  label(for='demo-priority-high') High
+                .col-6.col-12-small
+                  input#demo-copy(type='checkbox' name='demo-copy')
+                  label(for='demo-copy') Email me a copy
+                .col-6.col-12-small
+                  input#demo-human(type='checkbox' name='demo-human' checked='')
+                  label(for='demo-human') Not a robot
+                .col-12
+                  textarea#demo-message(name='demo-message' placeholder='Enter your message' rows='6')
+                .col-12
+                  ul.actions
+                    li
+                      input.primary(type='submit' value='Send Message')
+                    li
+                      input(type='reset' value='Reset')
+          // Image
+          section
+            h2 Image
+            h3 Fit
+            .box.alt
+              .row.gtr-uniform
+                .col-12
+                  span.image.fit
+                    img(src='images/website/pic13.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic01.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic02.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic03.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic03.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic01.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic02.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic02.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic03.jpg' alt='')
+                .col-4
+                  span.image.fit
+                    img(src='images/website/pic01.jpg' alt='')
+            h3 Left &amp; Right
+            p
+              span.image.left
+                img(src='images/website/pic14.jpg' alt='')
+              | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+            p
+              span.image.right
+                img(src='images/website/pic15.jpg' alt='')
+              | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
