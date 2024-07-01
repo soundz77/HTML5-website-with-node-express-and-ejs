@@ -1,16 +1,14 @@
-import express from "express";
-const router = express.Router();
+import app from "../base-template/src/app.js";
 
+// import application routes
 import renderIndexPage from "../controllers/pageController/renderIndexPage.js";
 import renderGenericPage from "../controllers/pageController/renderGenericPage.js";
 import renderElementsPage from "../controllers/pageController/renderElementsPage.js";
+import render404Page from "../controllers/pageController/render404Page.js";
 
-// Uses /
-router.get("/", renderIndexPage);
-router.get("/generic", renderGenericPage);
-router.get("/elements", renderElementsPage);
+// set up routes
+app.get("/", renderIndexPage);
+app.get("/generic", renderGenericPage);
+app.get("/elements", renderElementsPage);
+app.all("*", render404Page)
 
-export default router;
-
-
-// THIS IS NOT BEING USED! base app is used instead
