@@ -3,22 +3,39 @@ import { createLogger, format, transports } from "winston";
 import env from "../validation/validateProcessEnv.js";
 import path from "path";
 
-const { CONSOLE_LOGGER, ERROR_LOGGER, HTTP_LOGGER, LOG_FILE_PATH } = env;
+const { CONSOLE_LOGGER, ERROR_LOGGER, LOG_FILE_PATH } = env;
 const { combine, timestamp, json, errors, prettyPrint, colorize, printf } =
   format;
 
 const logDir = path.resolve(LOG_FILE_PATH);
 
-// Custom console format for errors
-const consoleFormat = printf(({ level, message, timestamp, stack }) => {
-  return `${timestamp} ${level}: ${stack || message}`;
+const consoleFormat = printf(({ level, message, timestamp }) => {
+  let logMessage = `${timestamp} ${level}:`;
+
+  if (typeof message === "object") {
+    const statusCode =
+      (message.error && message.error.statusCode) || message.statusCode;
+    const errorMessage =
+      (message.error && message.error.message) ||
+      message.message ||
+      "No message provided";
+
+    logMessage += ` ${statusCode} ${errorMessage}`;
+  } else {
+    logMessage += ` ${message}`;
+  }
+
+  return logMessage;
+});
+
+const httpFormat = printf(({ level, message, timestamp }) => {
+  return `${timestamp} ${level}: ${message}`;
 });
 
 // Configure Winston logger
 const logger = createLogger({
   format: combine(timestamp(), json(), errors({ stack: true }), prettyPrint()),
   transports: [
-    // Error logging to file
     new transports.File({
       level: "error",
       filename: path.join(logDir, "exceptionsRejections.log"),
@@ -36,22 +53,22 @@ const logger = createLogger({
       handleRejections: true,
       format: combine(json(), errors()),
     }),
-
-    // Console logging
+    new transports.File({
+      filename: path.join(logDir, "http.log"),
+      level: "info", // Adjust the level if necessary
+      format: combine(
+        timestamp(),
+        httpFormat // Use the custom HTTP format
+      ),
+    }),
     new transports.Console({
       level: CONSOLE_LOGGER,
       format: combine(
         colorize(),
         timestamp(),
         errors({ stack: true }),
-        consoleFormat // Use custom format for console logs
+        consoleFormat
       ),
-    }),
-
-    // HTTP logging
-    new transports.Http({
-      level: HTTP_LOGGER,
-      format: combine(json(), errors()),
     }),
   ],
   handleRejections: true,
