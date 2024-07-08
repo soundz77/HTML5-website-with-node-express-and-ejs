@@ -1,4 +1,4 @@
-import globalErrorMessages from "../../utils/logging/messages/globalErrorMessages.js";
+import globalErrorMessages from "../logging/messages/globalErrorMessages.js";
 
 const handle404Errors = (req, res) => {
   const message = `${globalErrorMessages.pageNotFound} ${req.originalUrl}`;

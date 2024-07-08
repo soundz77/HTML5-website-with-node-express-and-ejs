@@ -1,4 +1,4 @@
-import globalErrorMessages from "../../utils/logging/messages/globalErrorMessages.js";
+import globalErrorMessages from "../logging/messages/globalErrorMessages.js";
 
 const sendErrorProd = (err, req, res) => {
   if (req.originalUrl.startsWith("/api")) {

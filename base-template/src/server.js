@@ -1,12 +1,13 @@
+// base-template/server.js
 import "dotenv/config";
-
+import env from "./utils/validation/validateProcessEnv.js";
 import AppError from "./utils/errors/AppError.js";
 import logger from "./utils/logging/logger.js";
-import env from "./utils/validation/validateProcessEnv.js";
 import serverMessages from "./utils/logging/messages/serverMessages.js";
 import asyncMessages from "./utils/logging/messages/asyncMessages.js";
 import checkVarsSet from "./utils/validation/checkVarsSet.js";
-import app from "./app.js";
+
+let server;
 
 const checkRequiredVars = () => {
   const varsSet = checkVarsSet({
@@ -73,16 +74,21 @@ const setupProcessHandlers = () => {
   process.on("SIGINT", handleShutdown);
 };
 
-// Check required variables before starting the server
-checkRequiredVars();
+const setupServer = (app) => {
+  // Check required variables before starting the server
+  checkRequiredVars();
 
-// Start the server
-const server = app.listen(env.PORT, () => {
-  logger.info(serverMessages.success.startup);
-});
+  // Start the server
+  server = app.listen(env.PORT, () => {
+    logger.info(serverMessages.success.startup);
+  });
 
-// Handle server errors
-server.on("error", handleServerError);
+  // Handle server errors
+  server.on("error", handleServerError);
 
-// Set up process handlers
-setupProcessHandlers();
+  // Set up process handlers
+  setupProcessHandlers();
+};
+
+export default setupServer;
+export { server };

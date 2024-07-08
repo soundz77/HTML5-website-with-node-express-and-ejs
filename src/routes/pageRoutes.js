@@ -1,4 +1,5 @@
-import app from "../base-template/src/app.js";
+import app from "../../base-template/src/app.js";
+const pageRouter = app();
 
 // import application routes
 import renderIndexPage from "../controllers/pageController/renderIndexPage.js";
@@ -7,8 +8,9 @@ import renderElementsPage from "../controllers/pageController/renderElementsPage
 import render404Page from "../controllers/pageController/render404Page.js";
 
 // set up routes
-app.get("/", renderIndexPage);
-app.get("/generic", renderGenericPage);
-app.get("/elements", renderElementsPage);
-app.all("*", render404Page)
+pageRouter.get("/", renderIndexPage);
+pageRouter.get("/generic", renderGenericPage);
+pageRouter.get("/elements", renderElementsPage);
+pageRouter.all("*", render404Page);
 
+export default pageRouter;

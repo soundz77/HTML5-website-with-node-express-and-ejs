@@ -1,4 +1,4 @@
-import globalErrorMessages from "../../utils/logging/messages/globalErrorMessages.js";
+import globalErrorMessages from "../logging/messages/globalErrorMessages.js";
 import logger from "../logging/logger.js";
 
 const sendErrorDev = (err, req, res) => {

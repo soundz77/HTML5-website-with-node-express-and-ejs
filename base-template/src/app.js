@@ -1,10 +1,12 @@
+import "dotenv/config";
 import express from "express";
+import configureMiddleware from "../src/config/configureMiddleware.js";
 
-import configureMiddleware from "./config/configureMiddleware.js";
+const setupApp = () => {
+  const app = express();
+  configureMiddleware(app);
 
-const app = express();
+  return app;
+};
 
-// configuration
-configureMiddleware(app);
-
-export default app;
+export default setupApp;
