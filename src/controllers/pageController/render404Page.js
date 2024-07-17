@@ -1,4 +1,4 @@
-import logger from "../../utils/logging/loggingMessages.js";
+import logger from "../../../base-template/src/utils/logging/logger.js";
 import globalErrorMessages from "../../../base-template/src/utils/logging/messages/globalErrorMessages.js";
 
 const render404Page = (req, res) => {
