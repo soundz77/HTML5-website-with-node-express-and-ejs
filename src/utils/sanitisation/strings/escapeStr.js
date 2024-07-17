@@ -1,4 +1,4 @@
-import loggingMessages from "../../logging/loggingMessages.js";
+import loggingMessages from "../../logging/messages/validationMessages.js";
 
 const messages = loggingMessages.validateRequest.errors;
 
