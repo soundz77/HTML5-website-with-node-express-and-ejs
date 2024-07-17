@@ -15,7 +15,7 @@ const sendErrorDev = (err, req, res) => {
     stack: req.error ? req.error.stack : "NO_STACK_TRACE",
   };
 
-  logger.error(logEntry);
+  logger.error(JSON.stringify(logEntry));
 
   if (req?.originalUrl?.startsWith("/api")) {
     return res.status(err.statusCode).json({
